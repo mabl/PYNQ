@@ -47,6 +47,10 @@ Vagrant.configure("2") do |config|
 			chmod 777 -R /workspace
 		SHELL
 
+
+		bionic.vm.provision "shell",
+			inline: "dpkg --add-architecture i386"
+
 		bionic.vm.provision "shell",
 			inline: "apt-get update"
 
